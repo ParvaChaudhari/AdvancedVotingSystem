@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class='container' style='width:800px;height:550px;'>
+        <style>
+            li.list-group-item {
+            animation: slide-fade-in ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            box-shadow: 0 10px 10px 0 rgba(0,0,0,.3);
+        }
+        @keyframes slide-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(70px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+li.list-group-item {
+  background: rgba(255, 255, 255, 0.8);
+}
+  </style>
+  <form method="post" action="/party" >
+  {% csrf_token %}
+  <ul class="list-group">
+    {% for i in lis %}
+    <li class="list-group-item">
+      <table width='100%'><tr>
+        <td width='20%'>{{i.party_id}}</td>
+        <td width='20%'><img src="{{i.party_logo}}" width="50" height="60"></td>
+        <td width='30%'>{{i.party_name}}</td>
+        <td width='40%'>{{i.candidate_name}}</td>
+        <td width='10%'><input type="radio" name="vote" value={{i.party_id}}></td>
+      </tr></table>
+    </li>
+    {% endfor %}
+  </ul>
+  <br>
+  <div class='container' style='text-align:center;background-color:white;'>
+  <a href='/finish'>
+    <button type="submit" class="btn btn-primary" style='text-align:center;margin:5px;'>Vote</button>
+  </a> 
+  <br>
+  <h4>{{result}}</h4>
+</div>
+</div>
+{% endblock body %}

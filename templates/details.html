@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class='container' style='width:500px;height:550px;'>
+          <style>
+            ul.list-group {
+            animation: slide-fade-in ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            box-shadow: 0 10px 10px 0 rgba(0,0,0,.3);
+        }
+        @keyframes slide-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(70px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+div.first {
+            animation: slide-fade-in ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes slide-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(70px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+          h1 {
+              box-shadow: 0 10px 10px 0 rgba(0,0,0,.3);
+              background: rgba(0, 218, 255, 0.8);
+        }
+  </style>
+    {% if an %}
+    <br>
+    <h1  style='text-align:center;'>VOTER DETAILS</h1>
+    <br>
+    <ul class="list-group">
+        <li class="list-group-item">{{vi}}</li>
+        <li class="list-group-item">{{nm}}</li>
+        <li class="list-group-item">{{an}}</li>
+        <li class="list-group-item">{{dob}}</li>
+        <li class="list-group-item">{{pc}}</li>
+        <li class="list-group-item">{{rg}}</li>
+        <li class="list-group-item">{{em}}</li>
+        <li class="list-group-item">{{vd}}</li>
+    </ul>
+    <br>
+    <div class="first">
+    <a class="btn btn-primary" href="/party" style='text-align:center;' role="button">Continue</a>
+        <div>
+    {% endif %}
+    {% if not an %}
+    <ul class="list-group">
+        <li class="list-group-item">Verify before looking details.</li>
+    </ul>
+    <div style='text-align:center;margin:10px;'>
+    <a class="btn btn-primary" href="/verify" style='text-align:center;' role="button">Continue</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock body %}

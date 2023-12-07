@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class='container'>
+<form method="post" action="/login" >
+    {% csrf_token %}
+    <h3 style='font-weight:bold;'>Voter Registration</h3>
+    <br>
+    <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Aadhaar Number</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="inputEmail3" name='anum'>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="inputEmail3" name='nm'>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Date of Birth</label>
+        <div class="col-sm-3">
+          <input type="date" class="form-control" id="inputEmail3" max="2004-01-01" name='dob'>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Pincode</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="inputEmail3" name='pc'>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-3">
+          <input type="email" class="form-control" id="inputEmail3" name = 'mail'>
+        </div>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <br>
+    <h5>{{tmp}}</h5>
+</div>
+{% endblock body %}

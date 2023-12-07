@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block body%}
+<div class='container-fluid'>
+  <style>
+
+          p {
+            animation: slide-fade-in ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            box-shadow: 0 10px 10px 0 rgba(0,0,0,.3);
+              background: rgba(0, 218, 255, 0.8);
+        }
+        @keyframes slide-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(70px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+ div.text-center {
+            animation: slide-fade-in ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes slide-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(70px);
+    }
+        100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+</style>
+<div class="first">
+  <p >
+<body style='color:green;font-size: 20px;font-weight: bold;'>
+  Welcome to online voting system,to begin the process please click on the below button
+  <br>
+<br>Then enter valid aadhar number,an OTP will be sent on user's registered email address with aadhar number
+<br>
+<br>Then enter the sent OTP to verify your aadhar number
+<br>
+  <br>After verifying the OTP user's information will be shown to verify
+  <br>
+<br>After verifying click continue and vote for your desired party
+  <br>
+  and click vote
+<br>
+<br>And your vote will be successfully registered and user can close the site
+<br>
+<br>
+<br> 
+<br>
+<br>  
+</p>
+
+  
+ </body>
+</div>
+
+<div class="text-center">
+
+<a class="btn btn-primary" href="/verify" style='text-align:center;' role="button">Begin process</a>
+<body>
+  <br>  
+  <br>  
+</body>
+</div>
+</div>
+
+
+{% endblock body%}
